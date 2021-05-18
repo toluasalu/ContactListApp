@@ -21,7 +21,7 @@ class ContactCategory : AppCompatActivity() {
         val categoryAdapter = CategoryAdapter(this, dataset)
         recyclerView.adapter = categoryAdapter
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = GridLayoutManager(this, 4)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
 
 
     }

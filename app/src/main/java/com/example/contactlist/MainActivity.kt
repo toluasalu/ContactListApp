@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val listOfContacts = mutableListOf<Contact>()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         val recyclerView = binding.recyclerView
+
         val adapter = ContactAdapter(this, listOfContacts)
         recyclerView.adapter = adapter
         val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayout.VERTICAL)
