@@ -34,17 +34,17 @@ class CategoryAdapter(private val context: Context, private val dataset: List<Ca
         holder.buttonView.text = category.name
         val btnText = holder.buttonView.text.toString()
         val currentContext = holder.view.context
-        val intent = Intent(currentContext, MainActivity::class.java)
-        intent.putExtra(CATEGORY_EXTRA, btnText)
+        val contactListIntent = Intent(currentContext, MainActivity::class.java)
+        contactListIntent.putExtra(CATEGORY_EXTRA, btnText)
 
         holder.buttonView.setOnClickListener {
-            currentContext.startActivity(intent)
+            currentContext.startActivity(contactListIntent)
         }
 
     }
 
     override fun getItemCount(): Int {
-        return  dataset.size
+        return dataset.size
     }
 
 

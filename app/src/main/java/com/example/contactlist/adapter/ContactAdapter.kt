@@ -42,6 +42,7 @@ class ContactAdapter(private val context: Context, private val dataset: List<Con
 
     fun setupContacts(listOfContacts: List<Contact>) {
         this.contacts.addAll(listOfContacts)
+        notifyDataSetChanged()
     }
 
 }

@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-        val categoryName = intent?.extras?.getString(CategoryAdapter.CATEGORY_EXTRA)
-        title = categoryName
+//        val categoryName = intent?.extras?.getString(CategoryAdapter.CATEGORY_EXTRA)
+//        title = categoryName
 
         setContentView(view)
 
@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = ContactAdapter(this, listOfContacts)
         recyclerView.adapter = adapter
-        val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayout.VERTICAL)
+        val dividerItemDecoration =
+            DividerItemDecoration(recyclerView.context, LinearLayout.VERTICAL)
         recyclerView.addItemDecoration(dividerItemDecoration)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -49,16 +50,16 @@ class MainActivity : AppCompatActivity() {
         val phoneNumberInput = dialogView.findViewById<TextInputEditText>(R.id.number_input)
         val saveButton = dialogView.findViewById<Button>(R.id.saveBtn)
 
-         phoneNumberInput?.addTextChangedListener( object:TextWatcher {
-             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+        phoneNumberInput?.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
-             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                 if(p0?.length == 11) saveButton.isEnabled = true
-             }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (p0?.length == 11) saveButton.isEnabled = true
+            }
 
-             override fun afterTextChanged(p0: Editable?) {}
+            override fun afterTextChanged(p0: Editable?) {}
 
-         })
+        })
 
         //Create AlertDialog
         val alertDialog = dialogBuilder.create()
@@ -75,7 +76,6 @@ class MainActivity : AppCompatActivity() {
             clearInput(nameInput, phoneNumberInput)
             alertDialog.dismiss()
         }
-
 
 
     }
